@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "1497886",
+    "ThreadId": "663686",
+    "Html": "I am having difficulty building the c++ part of the library on Ubuntu. Could someone provide a guide for this?\r<br />\nThanks <br />\n",
+    "PostedDate": "2017-08-31T06:54:17.013-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1497918",
+    "ThreadId": "663686",
+    "Html": "Make sure you have gcc 5 and make installed. Then in sealcrypto/SEAL do:\r<br />\n<br />\n./configure CXXFLAGS=&quot;-O3 -march=native&quot;\r<br />\nmake\r<br />\n<br />\nThe library binary will be in sealcrypto/bin.\r<br />\n<br />\nTo install globally do:\r<br />\nsudo make install\r<br />\n<br />\nI hope this helps.<br />\n",
+    "PostedDate": "2017-09-02T16:49:49.727-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1497923",
+    "ThreadId": "663686",
+    "Html": "Thank you for your feedback.  I have tried but I keep getting this error -- bash: ./configure: /bin/sh^M: bad interpreter: No such file or directory.\r<br />\nDO you know what I might be doing wrong?<br />\n",
+    "PostedDate": "2017-09-04T07:56:39.887-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1497954",
+    "ThreadId": "663686",
+    "Html": "It's not you doing anything wrong---it's me:\r<br />\nApparently I have accidentally committed the file with Windows style line endings. Just create a new configure script by running autoconf in the sealcrypto/SEAL directory. It should work then, or alternatively convert it with dos2unix.<br />\n",
+    "PostedDate": "2017-09-06T22:38:35.09-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1497984",
+    "ThreadId": "663686",
+    "Html": "Yes. It works. Thank you.<br />\n",
+    "PostedDate": "2017-09-09T06:46:01.74-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1498410",
+    "ThreadId": "663686",
+    "Html": "I have built the SEAL library in ubuntu using the above command but I am unable to run SEALExamples.KIndly respond.\r<br />\nerror\r<br />\n  ^\r<br />\nmain.cpp:5:18: fatal error: seal.h: No such file or directory\r<br />\n #include &quot;seal.h&quot;<br />\n<pre><code>              ^</code></pre>\n\ncompilation terminated.<br />\n",
+    "PostedDate": "2017-11-16T00:13:02.537-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "1491743",
+    "ThreadId": "660971",
+    "Html": "Hi, I am very new to HE and SEAL.\r<br />\n<br />\nI am trying to implement SEAL over client and server, where the client will encrypt a message and send it to the server, who will do simple operations on it and send it back.\r<br />\n<br />\nI am trying to use JSON to transfer the encrypted message using Newtonsoft.JSON library. However, after receiving the message on the server side, and converting it to BigPolyArray, the properties of the BigPolyArray (size, coeffCount and coeffBitcount) are becoming zero.\r<br />\n<br />\nCan anyone explain why it is not working? Thank you in advance.<br />\n",
+    "PostedDate": "2017-01-26T19:09:39.073-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1492422",
+    "ThreadId": "660971",
+    "Html": "How exactly do you encode/decode it into JSON?\r<br />\n<br />\nI would suggest using BigPoly save to stream and load from stream to get a representation of the BigPoly in a MemoryStream and encode/decode to JSON from the memory stream. As an alternative, you can use the string representation of the BigPoly and send it via JSON and decode regenerate the BigPoly from string on the other end.<br />\n",
+    "PostedDate": "2017-02-09T00:29:37.38-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1492458",
+    "ThreadId": "660971",
+    "Html": "I actually solved the issue by using the MemoryStream way. Now it's working fine. \r<br />\n<br />\nThe second way you mentioned is also good.<br />\n",
+    "PostedDate": "2017-02-09T15:58:53.683-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1496968",
+    "ThreadId": "660971",
+    "Html": "Someone was asking me how I implemented the client server scheme. I have uploaded a sample code to the github, here is the link: \r<br />\n<a href=\"https://github.com/shohkhan/SEAL_Client_Server_Template\" rel=\"nofollow\">https://github.com/shohkhan/SEAL_Client_Server_Template</a><br />\n",
+    "PostedDate": "2017-06-07T18:07:50.95-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

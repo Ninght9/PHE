@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 1,
+    "Custom": null,
+    "Description": "Hi, \r\nwhen I try to build SEAL using Visual Studio on 32-bit Windows it fails because some intrinsics aren't available.\r\nI fixed this by commenting the \"ENABLE_INTRIN\" define in util/defines.h .",
+    "LastUpdatedDate": "2017-04-28T18:12:36.843-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "sealcrypto",
+    "ReportedDate": "2017-04-28T01:37:04.153-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "VS Win 32-bit build fails",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 2
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Thanks for the comment. I'll fix this in an upcoming release! :)",
+      "PostedDate": "2017-04-28T18:12:36.843-07:00",
+      "Id": 208250
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1498424",
+    "ThreadId": "663975",
+    "Html": "Hello,\r<br />\nI've tried to implement a cumulative sum using the SEAL library. However, there is an error like &quot;encrypted2 is not valid for encryption parameters&quot; (Please refer to the code below). Could you give me some advice on this error or let me know appropriate parameters? Thank you!<br />\n<pre><code>Ciphertext a[...]; // array\nPlaintext b[...]; // array\nCiphertext c[...]; // array\n\nparms.set_poly_modulus(&quot;1x^2048 + 1&quot;);\nparms.set_coeff_modulus(ChooserEvaluator::default_parameter_options().at(2048));\nparms.set_plain_modulus(1 &lt;&lt; 8);\n\n...\n\nfor (...) {\n  Ciphertext tmp0 = evaluator.multiply_plain(a[...], b[...]);\n  c[...] = evaluator.add(tmp0, c[...]);\n}</code></pre>\n\n",
+    "PostedDate": "2017-11-17T21:58:26.943-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

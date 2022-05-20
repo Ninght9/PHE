@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1497261",
+    "ThreadId": "663342",
+    "Html": "First of all , thanks for your code.\r<br />\n<br />\nCan you give me some hint how to print the Ciphertext ? For example, I have an integer that is encoded and then encrypted. How can I see what it looks like after encryption. Can I save it and then loaded back to do further calculation ?\r<br />\n<br />\nThanks a lot,\r<br />\n<br />\nK<br />\n",
+    "PostedDate": "2017-06-29T14:56:53.207-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1497270",
+    "ThreadId": "663342",
+    "Html": "Got this done already. Actually there is a build in save load in Ciphertext. Just need to do it in a binary way.<br />\n",
+    "PostedDate": "2017-06-30T07:55:06.55-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

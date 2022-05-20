@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1497991",
+    "ThreadId": "663742",
+    "Html": "I am working on implementing a comparator using SEAL so I can perform homomorphic greater-than computations. For my specific project I need to use a FractionalEncoder as my inputs are rationals. \r<br />\n<br />\nMy desire is to not only solve my problem but also to create a small API for others who would desire to use SEAL for comparisons. Other operations could be built in (average, min, max, multiplexer, etc), but for now I am tackling the one I need - comparison\r<br />\n<br />\nI have created a class for homomorphic operations to be performed on binary inputs with the hope of implementing XOR, AND, NOT, NAND, OR, NOR, and XNOR gates that I might build them up to implement the other functions. This class could then be #included into any project and the operations called. \r<br />\n<br />\n<strong>My problem:</strong> I have been trying to figure out how to make an instance of an Encoder, Encryptor, and Evaluator available to an entire class. I have not been successful thus far. Some advice on how to proceed would be much appreciated! <br />\n",
+    "PostedDate": "2017-09-11T03:01:55.843-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1498054",
+    "ThreadId": "663742",
+    "Html": "First, I'm not sure if the fractional encoders (or any variant of it that I can imagine) is suitable for this purpose, as they don't store the sign in any easily accessible way. Even the integer encoders are not good for this, as determining the sign requires you to decode first. For example, how could you determine the sign of a base-2 encoded plaintext polynomial -x^8 + 5x^5 - 4x^4  + 128x + 1? Instead, you might want to start from the simplest case which is using constant-coefficient plaintext polynomials to store your numbers scaled to integers. Then you need to keep track of the scaling in a separate variable, and adjust it appropriately when doing homomorphic operations. Extracting the sign in this setting should be much easier. However, maybe you can come up with a better way of doing it WITH the integer/fractional encoders, or some variant of them. That would be awesome!\r<br />\n<br />\nI suppose your class could simply store those Encoder, Encryptor, and Evaluator as member variables, or maybe store shared pointer to them so you can also use them separately? Maybe I'm not understanding your problem correctly?<br />\n",
+    "PostedDate": "2017-09-15T21:44:24.453-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

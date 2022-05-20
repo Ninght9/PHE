@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": "2016-06-19T12:47:26.237-07:00",
+    "CommentCount": 1,
+    "Custom": null,
+    "Description": "Hello.\r\n\r\nFirst of all, thank you for making this implementation public. It will be very useful for a lot of researchers. \r\n\r\nSo, my questions are:\r\n\r\n1. Are you planning to build a thread-safe version?\r\n\r\n2. .Does all the \"non thread-safeness\" of the scheme come from the BigPolyArith class? I mean, if this one were thread safe, then all the others would be so as well or are there other issues?\r\n\r\n\r\nCordially.\r\n",
+    "LastUpdatedDate": "2016-06-19T12:47:26.237-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "sealcrypto",
+    "ReportedDate": "2016-01-11T08:10:22.613-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Fixed"
+    },
+    "Summary": "Thread-safe version",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 1
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Hello,\n\nHere is some explanation:\n\n__2.__ Currently the main problem is with the MemoryPool, which is not thread-safe for efficiency reasons, and is used by basically everything (Encryptor, Evaluator, etc. create each their own MemoryPool). Moreover, even if MemoryPool was thread-safe, mutating BigPolys and BigUInts wouldn't be, and I don't know of any reasonable solution to that. The BigPolyArith class is in fact not used by any other parts of the library. It's there simply to help users manipulate BigPolys.\n\n__1.__ I would love to have a thread-safe version of MemoryPool. The effects on performance are not clear to me, but there is a good chance that using e.g. one global MemoryPool for everything might actually speed things up. The reason we don't have this yet is that it takes quite a lot of work to do, and currently much of the things that one might want to achieve with multithreading can already be done by simply creating a new Encryptor, Encoder, etc. in each thread, although admittedly this is annoying.\n\n\nKim",
+      "PostedDate": "2016-01-19T23:50:35.383-08:00",
+      "Id": 195630
+    }
+  ]
+}

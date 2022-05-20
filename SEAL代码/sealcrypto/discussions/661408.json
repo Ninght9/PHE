@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1492801",
+    "ThreadId": "661408",
+    "Html": "Hi. I have a client server scheme, where the client sends encrypted data to the server. The server only has access to the public key, not the secret key. Is there any way to find the noise in the encrypted text without having access to the secret key?\r<br />\n<br />\n(For decryptor.InherentNoiseBits to work, the decryptor needs access to the secret key. )<br />\n",
+    "PostedDate": "2017-02-16T12:21:22.537-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]
